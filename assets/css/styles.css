@@ -1,0 +1,137 @@
+/* CSS Variables for Theming */
+:root {
+  --bg-color: #f4f4f4;
+  --text-color: #222;
+  --card-bg: #fff;
+  --primary-color: #007bff;
+  --danger-color: #dc3545;
+  --border-radius: 12px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #f1f1f1;
+  --card-bg: #1e1e1e;
+  --primary-color: #0d6efd;
+  --danger-color: #ff6b6b;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: var(--transition);
+  font-family: 'Vazirmatn', sans-serif;
+}
+
+.app-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.btn-toggle-theme {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.5rem 1rem;
+  transition: var(--transition);
+}
+
+.btn-toggle-theme:hover {
+  opacity: 0.9;
+}
+
+.task-form {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.filters {
+  gap: 1rem;
+}
+
+.task-card {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  animation: fadeIn 0.4s ease;
+}
+
+.task-card.done {
+  opacity: 0.7;
+  text-decoration: line-through;
+}
+
+.task-actions button {
+  margin-left: 0.5rem;
+}
+
+.pagination .page-link {
+  color: var(--primary-color);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.pagination .page-link:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+  }
+
+  .task-form .row > div {
+    margin-bottom: 0.75rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+}
+
+.calendar-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  background-color: var(--bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+
+.chart-container {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: var(--bg);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
